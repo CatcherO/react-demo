@@ -12,6 +12,10 @@
     "extends": "airbnb",
     "rules": {
         "semi": [0],
-        "react/jsx-filename-extension": [0]
+        "react/jsx-filename-extension": [0],
+        "react/jsx-one-expression-per-line": [0],
+        "react/require-default-props": [0],
+        "arrow-body-style" :[0],
+        "react/destructuring-assignment": [0]
     }
 }

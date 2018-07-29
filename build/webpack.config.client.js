@@ -16,6 +16,10 @@ const config = webpackMerge(baseConfig, {
   plugins: [
     new HTMLPlugin({
       template: path.join(__dirname, '../client/template.html')
+    }),
+    new HTMLPlugin({
+      template: '!!ejs-compiled-loader!' + path.join(__dirname, '../client/server.template.ejs'),
+      filename: 'server.ejs'
     })
   ]
 
@@ -39,6 +43,9 @@ if (isDev) {
     publicPath: '/public/',
     historyApiFallback: {
       index: '/public/index.html'
+    },
+    proxy: {
+      '/api': 'http://127.0.0.1:2333'
     }
   }
   config.mode = 'development'
